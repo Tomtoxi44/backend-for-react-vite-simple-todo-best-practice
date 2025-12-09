@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js project to Azure Function App - todo-functions
+name: Build and deploy Node.js project to Azure Function App - backend-functions-todoapp
 
 on:
   push:
@@ -67,15 +67,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_CC5C0F643BFC472BAE6CDC845B22155B }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A9730220E2324C38B2889E6F2BE14E79 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A93A06B6013B47B2BF39A74C27B77083 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_AF05A4ED4CC446278BD4DC7DACC97227 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_2E2EF68F1CE2494FAE68E80D8F2174C0 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A88DEA9CD6284E309A6D63F03C35F2D6 }}
 
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
         id: fa
         with:
-          app-name: 'todo-functions'
+          app-name: 'backend-functions-todoapp'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           
